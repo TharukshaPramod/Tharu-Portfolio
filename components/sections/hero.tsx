@@ -1,25 +1,55 @@
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Spotlight } from '@/components/animations/spotlight';
-import { siteConfig } from '@/config/site';
+// components/sections/hero.tsx
+import { Button } from '@/components/ui/button'
+import { TextReveal } from '@/components/animations/text-reveal'
+import { ArrowRight, Download } from 'lucide-react'
+import Link from 'next/link'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden rounded-2xl border border-muted bg-foreground text-background p-10">
-      <Spotlight />
-      <div className="relative z-10 space-y-4">
-        <p className="text-sm uppercase tracking-wide text-background/70">{siteConfig.role}</p>
-        <h1 className="text-4xl font-bold leading-tight">{siteConfig.title}</h1>
-        <p className="max-w-2xl text-lg text-background/80">{siteConfig.description}</p>
-        <div className="flex gap-3">
-          <Button asChild>
-            <Link href="/projects">View Projects</Link>
+    <section className="container mx-auto px-4 md:px-6 py-12 md:py-24">
+      <div className="max-w-4xl mx-auto text-center space-y-8">
+        {/* Badge */}
+        <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm">
+          🚀 Available for freelance work
+        </div>
+
+        {/* Animated Heading */}
+        <div className="space-y-4">
+          <TextReveal 
+            text="Hi, I'm Your Name"
+            className="text-4xl md:text-6xl font-bold"
+            delay={0.2}
+          />
+          <TextReveal
+            text="Frontend Developer & UI/UX Designer"
+            className="text-2xl md:text-4xl font-bold text-primary"
+            delay={0.4}
+          />
+        </div>
+
+        {/* Description */}
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          I craft exceptional digital experiences that blend beautiful design 
+          with cutting-edge technology. Specializing in React, Next.js, and 
+          modern web development.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+          <Button size="lg" asChild>
+            <Link href="/projects">
+              View My Work
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
-          <Button variant="outline" asChild>
-            <Link href="/contact">Get in touch</Link>
+          <Button size="lg" variant="outline" asChild>
+            <Link href="/contact">
+              Get In Touch
+              <Download className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>
     </section>
-  );
+  )
 }

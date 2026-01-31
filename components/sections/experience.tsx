@@ -1,23 +1,19 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { experience } from '@/config/site';
-
+// components/sections/experience.tsx
 export function Experience() {
   return (
-    <section className="space-y-4">
-      <h2 className="text-2xl font-semibold">Experience</h2>
-      <div className="space-y-4">
-        {experience.map((item) => (
-          <Card key={item.company}>
-            <CardHeader>
-              <CardTitle>{item.role}</CardTitle>
-              <p className="text-sm text-muted-foreground">{item.company} · {item.period}</p>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">{item.summary}</p>
-            </CardContent>
-          </Card>
-        ))}
+    <section className="py-12 md:py-24">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">Experience</h2>
+          <p className="text-muted-foreground mt-2">
+            My professional journey
+          </p>
+        </div>
+        {/* Experience will go here */}
+        <div className="text-center py-12">
+          <p className="text-muted-foreground">Experience section coming soon...</p>
+        </div>
       </div>
     </section>
-  );
+  )
 }

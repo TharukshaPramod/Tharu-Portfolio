@@ -1,6 +1,23 @@
+// config/nav.ts
 export const navItems = [
-  { label: 'About', href: '/about' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '/contact' },
-];
+  {
+    title: 'Home',
+    href: '/',
+  },
+  {
+    title: 'About',
+    href: '/about',
+  },
+  {
+    title: 'Projects',
+    href: '/projects',
+  },
+  {
+    title: 'Blog',
+    href: '/blog',
+  },
+  {
+    title: 'Contact',
+    href: '/contact',
+  },
+]

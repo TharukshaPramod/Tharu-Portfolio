@@ -1,61 +1,60 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import matter from 'gray-matter';
-import { CONTENT_DIR } from './constants';
-import type { BlogFrontmatter, ProjectFrontmatter } from '../types';
+// lib/mdx.ts
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
-function getDir(folder: keyof typeof CONTENT_DIR) {
-  return path.join(process.cwd(), CONTENT_DIR[folder]);
+const contentDirectory = path.join(process.cwd(), 'content')
+
+export type BlogPost = {
+  slug: string
+  title: string
+  date: string
+  description: string
+  tags: string[]
+  content: string
 }
 
-function readFilePaths(folder: keyof typeof CONTENT_DIR) {
-  const dir = getDir(folder);
-  return fs.readdirSync(dir).filter((file) => file.endsWith('.mdx'));
-}
-
-export async function getAllProjects() {
-  const files = readFilePaths('projects');
-  return files.map((file) => {
-    const raw = fs.readFileSync(path.join(getDir('projects'), file), 'utf8');
-    const { data } = matter(raw);
-    const frontmatter = data as ProjectFrontmatter;
-    return {
-      slug: file.replace(/\.mdx$/, ''),
-      title: frontmatter.title,
-      description: frontmatter.description,
-    };
-  });
-}
-
-export async function getProjectBySlug(slug: string) {
-  const filePath = path.join(getDir('projects'), `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, 'utf8');
-  const { content, data } = matter(raw);
-  return { slug, content, frontmatter: data as ProjectFrontmatter };
-}
-
-export async function getAllPosts() {
-  const files = readFilePaths('blog');
-  return files
+export async function getBlogPosts(): Promise<BlogPost[]> {
+  const blogDir = path.join(contentDirectory, 'blog')
+  const files = fs.readdirSync(blogDir)
+  
+  const posts = files
+    .filter((file) => file.endsWith('.mdx'))
     .map((file) => {
-      const raw = fs.readFileSync(path.join(getDir('blog'), file), 'utf8');
-      const { data } = matter(raw);
-      const frontmatter = data as BlogFrontmatter;
+      const slug = file.replace('.mdx', '')
+      const filePath = path.join(blogDir, file)
+      const fileContent = fs.readFileSync(filePath, 'utf8')
+      const { data, content } = matter(fileContent)
+      
       return {
-        slug: file.replace(/\.mdx$/, ''),
-        title: frontmatter.title,
-        description: frontmatter.description,
-        date: frontmatter.date,
-      };
+        slug,
+        title: data.title || slug,
+        date: data.date || new Date().toISOString(),
+        description: data.description || '',
+        tags: data.tags || [],
+        content,
+      }
     })
-    .sort((a, b) => (a.date > b.date ? -1 : 1));
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  
+  return posts
 }
 
-export async function getPostBySlug(slug: string) {
-  const filePath = path.join(getDir('blog'), `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, 'utf8');
-  const { content, data } = matter(raw);
-  return { slug, content, frontmatter: data as BlogFrontmatter };
+export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+  try {
+    const filePath = path.join(contentDirectory, 'blog', `${slug}.mdx`)
+    const fileContent = fs.readFileSync(filePath, 'utf8')
+    const { data, content } = matter(fileContent)
+    
+    return {
+      slug,
+      title: data.title || slug,
+      date: data.date || new Date().toISOString(),
+      description: data.description || '',
+      tags: data.tags || [],
+      content,
+    }
+  } catch {
+    return null
+  }
 }

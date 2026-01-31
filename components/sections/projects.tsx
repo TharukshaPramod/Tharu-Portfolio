@@ -1,29 +1,19 @@
-import Link from 'next/link';
-import { getAllProjects } from '@/lib/mdx';
-
-export async function ProjectsSection() {
-  const projects = await getAllProjects();
-
+// components/sections/projects.tsx
+export function Projects() {
   return (
-    <section className="space-y-4">
-      <div className="flex items-baseline justify-between">
-        <h2 className="text-2xl font-semibold">Projects</h2>
-        <Link href="/projects" className="text-sm text-accent">
-          View all
-        </Link>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        {projects.slice(0, 2).map((project) => (
-          <Link
-            key={project.slug}
-            href={`/projects/${project.slug}`}
-            className="rounded-lg border border-muted p-4 hover:border-accent hover:shadow"
-          >
-            <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{project.description}</p>
-          </Link>
-        ))}
+    <section className="py-12 md:py-24">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
+          <p className="text-muted-foreground mt-2">
+            Some of my recent work
+          </p>
+        </div>
+        {/* Projects will go here */}
+        <div className="text-center py-12">
+          <p className="text-muted-foreground">Projects section coming soon...</p>
+        </div>
       </div>
     </section>
-  );
+  )
 }
