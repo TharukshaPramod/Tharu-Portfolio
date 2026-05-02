@@ -1,12 +1,12 @@
 // config/site.ts
 export const siteConfig = {
-  name: 'Your Name',
-  title: 'Frontend Developer & Designer',
-  description: 'Building modern web experiences with React, Next.js, and TypeScript.',
-  url: 'https://yourportfolio.com',
+  name: 'Tharuksha Pramod',
+  title: 'AI/ML Engineer & Fullstack Developer',
+  description: 'Aspiring AI/ML Engineer and Data Science student at SLIIT, specializing in machine learning, full-stack web development, and cloud computing.',
+  url: 'https://tharuksha-portfolio.com', // Update this when deployed
   links: {
-    github: 'https://github.com/yourusername',
-    linkedin: 'https://linkedin.com/in/yourusername',
-    twitter: 'https://twitter.com/yourusername',
+    github: 'https://github.com/TharukshaPramod',
+    linkedin: 'https://linkedin.com/in/tharukshapramod', // Update if different
+    twitter: 'https://twitter.com/tharukshapramod', // Update if different
   },
-}
+}

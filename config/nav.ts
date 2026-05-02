@@ -1,4 +1,4 @@
-// config/nav.ts
+// config/nav.ts - Add Certificates page
 export const navItems = [
   {
     title: 'Home',
@@ -11,6 +11,10 @@ export const navItems = [
   {
     title: 'Projects',
     href: '/projects',
+  },
+  {
+    title: 'Certificates',
+    href: '/certificates', // Changed from anchor to page
   },
   {
     title: 'Blog',
