@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { Outfit } from 'next/font/google'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import { Providers } from '@/app/providers'
 import { Navbar } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
 import '@/styles/globals.css'
 
-const outfit = Outfit({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
 
 export const metadata: Metadata = {
 	title: 'Tharuksha Pramod | AI/ML Engineer',
@@ -18,7 +19,7 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={`${outfit.className} antialiased`}>
+			<body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
 				<Providers>
 					<div className="min-h-screen bg-background">
 						<Navbar />

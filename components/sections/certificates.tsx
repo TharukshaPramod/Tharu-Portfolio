@@ -19,7 +19,7 @@ const certificates = [
     date: '2023',
     credentialId: 'AWS-ML-001',
     skills: ['AWS', 'Machine Learning', 'SageMaker'],
-    image: '/images/profile.jpeg', // Replace with your certificate image
+    image: '/certificates/temp.jpg', // Replace with your converted JPG/PNG
     link: 'https://aws.amazon.com/certification',
   },
   {
@@ -29,14 +29,39 @@ const certificates = [
     date: '2023',
     credentialId: 'AZ-102-001',
     skills: ['Azure', 'AI Solutions', 'Cognitive Services'],
-    image: '/images/profile.jpeg', // Replace with your certificate image
+    image: '/certificates/temp.jpg', // Replace with your converted JPG/PNG
     link: 'https://learn.microsoft.com/en-us/credentials/',
   },
-  // ... more certificates can be added here
+  {
+    id: 3,
+    title: 'Simplilearn Data Science Certification',
+    issuer: 'Simplilearn',
+    date: '2022',
+    credentialId: 'SL-DS-001',
+    skills: ['Data Science', 'Python', 'Statistics'],
+    image: '/certificates/temp.jpg', // Replace with your converted JPG/PNG
+    link: 'https://www.simplilearn.com/',
+  },
+  {
+    id: 4,
+    title: 'GitHub Foundations',
+    issuer: 'GitHub',
+    date: '2024',
+    credentialId: 'GH-F-001',
+    skills: ['Git', 'GitHub Actions', 'CI/CD'],
+    image: '/certificates/temp.jpg', // Replace with your converted JPG/PNG
+    link: 'https://github.com/certifications',
+  },
 ]
 
-export function Certificates() {
+interface CertificatesProps {
+  limit?: number;
+}
+
+export function Certificates({ limit }: CertificatesProps = {}) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  
+  const displayCertificates = limit ? certificates.slice(0, limit) : certificates;
 
   return (
     <section className="py-12 md:py-24 relative">
@@ -54,7 +79,7 @@ export function Certificates() {
 
         {/* Certificates Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certificates.map((cert, index) => (
+          {displayCertificates.map((cert, index) => (
             <motion.div
               key={cert.id}
               initial={{ opacity: 0, y: 20 }}
