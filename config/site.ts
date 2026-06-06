@@ -7,6 +7,6 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/TharukshaPramod',
     linkedin: 'https://linkedin.com/in/tharukshapramod', // Update if different
-    twitter: 'https://twitter.com/tharukshapramod', // Update if different
+    facebook: 'https://web.facebook.com/tharuksha.pramodsankalpa',
   },
 }

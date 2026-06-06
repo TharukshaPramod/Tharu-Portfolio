@@ -20,7 +20,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="h-8 w-8 rounded-lg bg-primary" />
-          <span className="text-xl font-bold">Portfolio</span>
+          <span className="text-xl font-bold">Tharuksha</span>
         </Link>
 
         {/* Desktop Navigation */}

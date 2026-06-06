@@ -17,8 +17,8 @@ export const navItems = [
     href: '/certificates', // Changed from anchor to page
   },
   {
-    title: 'Blog',
-    href: '/blog',
+    title: 'Services',
+    href: '/services',
   },
   {
     title: 'Contact',

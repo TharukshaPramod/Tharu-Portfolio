@@ -36,14 +36,21 @@ export function ContactForm() {
     e.preventDefault()
     setStatus('loading')
 
-    // Simulate API call
+    // Construct the mailto link
+    const subject = encodeURIComponent(formData.subject)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )
+    
+    // Simulate slight delay for UI feedback
     setTimeout(() => {
+      window.location.href = `mailto:tharukshapramod2000@gmail.com?subject=${subject}&body=${body}`
       setStatus('success')
       setFormData({ name: '', email: '', subject: '', message: '' })
       
       // Reset after 3 seconds
       setTimeout(() => setStatus('idle'), 3000)
-    }, 1500)
+    }, 800)
   }
 
   return (

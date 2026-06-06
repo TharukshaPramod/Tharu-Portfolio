@@ -2,7 +2,7 @@
 import { ContactForm } from '@/components/contact/contact-form'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Mail, Phone, MapPin, Clock, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Github, Linkedin, Facebook } from 'lucide-react'
 import Link from 'next/link'
 import { siteConfig } from '@/config/site'
 
@@ -10,28 +10,28 @@ const contactMethods = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'hello@yourportfolio.com',
-    href: 'mailto:hello@yourportfolio.com',
+    value: 'tharukshapramod2000@gmail.com',
+    href: 'mailto:tharukshapramod2000@gmail.com',
     description: 'Typically reply within 24 hours',
   },
   {
     icon: Phone,
     title: 'Phone',
-    value: '+1 (123) 456-7890',
-    href: 'tel:+11234567890',
+    value: '0763131160, 0785131160',
+    href: 'tel:+94763131160',
     description: 'Available Mon-Fri, 9AM-6PM',
   },
   {
     icon: MapPin,
     title: 'Location',
-    value: 'San Francisco, CA',
-    href: '#',
+    value: 'Near 444 2nd lane, Kaduwela 10640, Sri Lanka',
+    href: 'https://maps.google.com/?q=Kaduwela,Sri+Lanka',
     description: 'Open to remote work worldwide',
   },
   {
     icon: Clock,
     title: 'Timezone',
-    value: 'PST (UTC-8)',
+    value: 'IST (UTC+5:30)',
     href: '#',
     description: 'Flexible with scheduling',
   },
@@ -95,11 +95,13 @@ export default function ContactPage() {
                     <Linkedin className="h-4 w-4" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="icon" asChild>
-                  <Link href={siteConfig.links.twitter} target="_blank">
-                    <Twitter className="h-4 w-4" />
-                  </Link>
-                </Button>
+                {siteConfig.links.facebook && (
+                  <Button variant="outline" size="icon" asChild>
+                    <Link href={siteConfig.links.facebook} target="_blank">
+                      <Facebook className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                )}
               </div>
             </CardContent>
           </Card>

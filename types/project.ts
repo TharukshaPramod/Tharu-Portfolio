@@ -13,4 +13,8 @@ export interface Project {
     website?: string
   }
   featured: boolean
+  features?: string[]
+  architecture?: string
+  challenges?: string
+  outcome?: string
 }
