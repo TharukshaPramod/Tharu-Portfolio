@@ -3,6 +3,27 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    id: 'olist-dwbi',
+    title: 'Olist E-Commerce: DWBI Solution',
+    description: 'An enterprise-grade Data Warehouse and Business Intelligence solution built on the Brazilian Olist e-commerce marketplace dataset, leveraging the full Microsoft BI Stack to deliver actionable insights through interactive dashboards and multidimensional analytics.',
+    shortDescription: 'Enterprise DWBI Solution with MS BI Stack',
+    image: '/Project images/olist.png',
+    images: ['/Project images/olist.png'],
+    tags: ['SQL Server', 'SSIS', 'SSAS', 'Power BI', 'Data Warehouse'],
+    links: { github: 'https://github.com/TharukshaPramod/Olist-Ecommerce-DWBI-Solution' },
+    featured: true,
+    features: [
+      'Complete end-to-end DWBI pipeline from raw CSV ingestion to dashboards',
+      'Centralized star-schema data warehouse in SQL Server',
+      'SSIS ETL Pipeline for data extraction, transformation, and loading',
+      'Multidimensional OLAP Cube semantic layer in SSAS for fast slicing & dicing',
+      'Executive dashboards & interactive analytics in Power BI'
+    ],
+    architecture: 'Layered analytical architecture utilizing the Microsoft BI Stack. Raw data ingested via SSIS ETL Pipeline into a centralized SQL Server Data Warehouse following a classic star-schema. An SSAS Multidimensional OLAP Cube serves as the semantic layer, queried by Power BI for interactive dashboard visualizataions.',
+    challenges: 'Handling machine-specific server names and flat file source code page mismatches during ETL pipeline configuration. Ensuring dimension tables were loaded before fact tables in SSIS to prevent orphaned foreign keys, and resolving SSAS cube processing key errors by verifying surrogate key mappings.',
+    outcome: 'Successfully implemented a complete end-to-end DWBI pipeline with interactive Power BI dashboards providing actionable insights on sales trends, product performance, geographic distribution, and logistics SLAs.'
+  },
+  {
     id: 'campusflow',
     title: 'CampusFlow: Smart Campus Management Platform',
     description: 'A full-stack university campus management platform designed to streamline facility bookings, incident reporting, resource management, and real-time notifications, all powered by a local AI assistant via Ollama (Llama 3).',

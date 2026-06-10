@@ -326,6 +326,17 @@ export const certificates: Certificate[] = [
     image: '/MY certificates/SimpliLearn/Introduction to Machine Learning with R.jpg',
     category: 'AI/ML'
   },
+  {
+    id: 33,
+    title: 'Introduction to Deep Learning with Keras',
+    issuer: 'Simplilearn',
+    date: '2024',
+    credentialId: 'SL-DLK-07',
+    skills: ['Deep Learning', 'Keras', 'Neural Networks'],
+    link: '',
+    image: '/MY certificates/SimpliLearn/Introduction to Deep Learning with Keras_page-0001.jpg',
+    category: 'AI/ML'
+  },
 
   // ==================== Software Development & Databases (4 Certificates) ====================
   {
@@ -370,6 +381,17 @@ export const certificates: Certificate[] = [
     skills: ['Document Model', 'Schema Migration', 'MongoDB', 'SQL'],
     link: '',
     image: '/MY certificates/github student developer/from-relational-model-sql-to-mongodb-s-document-mod.jpg',
+    category: 'Dev & DB'
+  },
+  {
+    id: 34,
+    title: 'Introduction to IoT',
+    issuer: 'Simplilearn',
+    date: '2024',
+    credentialId: 'SL-IOT-05',
+    skills: ['Internet of Things', 'Sensors', 'IoT Architecture'],
+    link: '',
+    image: '/MY certificates/SimpliLearn/Introduction to IoT.jpg',
     category: 'Dev & DB'
   }
 ]
