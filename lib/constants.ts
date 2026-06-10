@@ -95,7 +95,7 @@ export const projects: Project[] = [
     images: ['/Project images/sitemaster.png'],
     tags: ['Node.js', 'React', 'MongoDB', 'Express', 'Fullstack'],
     links: { github: 'https://github.com/TharukshaPramod/SiteMaster' },
-    featured: false,
+    featured: true,
     features: [
       'Interactive Gantt Chart Visual Project Timelines',
       'Real-time Material Inventory tracking and low stock alerts',
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     images: ['/Project images/invexa.png'],
     tags: ['Node.js', 'React', 'MongoDB', 'Express', 'Tailwind CSS'],
     links: { github: 'https://github.com/TharukshaPramod/Invexa' },
-    featured: false,
+    featured: true,
     features: [
       'Automated Inventory Stock Level Alert system',
       'Supplier Coordination portal with dynamic ordering triggers',
