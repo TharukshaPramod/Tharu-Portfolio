@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { TextReveal } from '@/components/animations/text-reveal'
 import { Spotlight } from '@/components/animations/spotlight'
 import { FloatingCard } from '@/components/animations/floating-card'
-import { ArrowRight, Mail, Sparkles, MapPin, Briefcase, Database } from 'lucide-react'
+import { ArrowRight, Mail, Sparkles, MapPin, Briefcase, Database, FileText } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -68,14 +68,20 @@ export function Hero() {
           >
             <Button size="lg" className="group shadow-lg shadow-primary/20" asChild>
               <Link href="/projects">
-                View My Projects
+                View Projects
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="group glass-effect" asChild>
+            <Button size="lg" variant="outline" className="group glass-effect border-primary/50 text-primary hover:bg-primary/10" asChild>
+              <a href="/Tharuksha_Pramod_CV.pdf" target="_blank" rel="noopener noreferrer">
+                <FileText className="mr-2 h-4 w-4" />
+                Download CV
+              </a>
+            </Button>
+            <Button size="lg" variant="ghost" className="group glass-effect" asChild>
               <Link href="/contact">
                 <Mail className="mr-2 h-4 w-4" />
-                Contact Me
+                Contact
               </Link>
             </Button>
           </motion.div>
