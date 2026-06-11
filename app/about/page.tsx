@@ -50,7 +50,7 @@ export default function AboutPage() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="glass-effect" asChild>
-                <a href="/resume.pdf" download>
+                <a href="/Tharuksha_Pramod_CV.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" />
                   Download Resume
                 </a>

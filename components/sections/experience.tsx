@@ -52,7 +52,7 @@ export function Experience() {
         <div className="text-center mt-12">
           <div className="inline-flex flex-col sm:flex-row gap-4 items-center">
             <Button size="lg" className="group shadow-lg shadow-primary/20" asChild>
-              <a href="/resume.pdf" download>
+              <a href="/Tharuksha_Pramod_CV.pdf" target="_blank" rel="noopener noreferrer">
                 Download Resume
                 <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
               </a>
